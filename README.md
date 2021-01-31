@@ -3,11 +3,11 @@
 
 <h2>Diagramme Entité-Relation</h2>
 
-![](.pastes\2021-01-30-20-11-17.png)
+![diagram1](diagram1.PNG)
 <h2>Diagramme relationnel</h2>
 
 (le même pour l'instant)
-![](.pastes\2021-01-30-20-11-17.png)
+![diagram1](diagram1.PNG)
 
 <h2>Schema SQL</h2>
 
