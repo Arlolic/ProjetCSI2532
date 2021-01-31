@@ -1,7 +1,5 @@
 # CSI 2532 - Livrable 1
 
-Ahmad Charba
-Simon Proulx
 
 <h2>Diagramme Entité-Relation</h2>
 
@@ -46,6 +44,17 @@ where ID = 3;
 
 <h3>UPDATE</h3>
 
-
+```
+UPDATE athletes
+  SET gender = 'male'
+  WHERE name = 'Jean-Michel Crapaud';
+```
 
 <h3>SELECT</h3>
+
+```
+SELECT name, gender
+FROM athletes
+WHERE gender <> 'male'
+ORDER BY gender DESC, name ASC;
+```
