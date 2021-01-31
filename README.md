@@ -1,5 +1,7 @@
 # CSI 2532 - Livrable 1
 
+Ahmad Charba
+Simon Proulx
 
 <h2>Diagramme Entité-Relation</h2>
 
