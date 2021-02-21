@@ -17,6 +17,7 @@ CREATE TABLE athletes(
 	name varchar(255),
 	dateOfBirth date,
 	gender varchar(255)
+	PRIMARY KEY (ID)
 );
 ```
 
@@ -47,7 +48,7 @@ where ID = 3;
 ```
 UPDATE athletes
   SET gender = 'male'
-  WHERE name = 'Jean-Michel Crapaud';
+  WHERE ID = '4';
 ```
 
 <h3>SELECT</h3>
