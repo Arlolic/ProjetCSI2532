@@ -1,27 +1,35 @@
-# CSI 2532 - Livrable 1
+# CSI 2532 - Livrable 2
 
-
+Une base de donnée pour les compétition et des classements d'athlètes.
 <h2>Diagramme Entité-Relation</h2>
 
-![diagram1](diagram1.PNG)
+![ER_livrable2](diagrams/ER_livrable2.PNG)
+
 <h2>Diagramme relationnel</h2>
 
-(le même pour l'instant)
-![diagram1](diagram1.PNG)
+![RM_livrable2](diagrams/RM_livrable2.PNG)
+
+
 
 <h2>Schema SQL</h2>
 
-```
-CREATE TABLE athletes(
-	ID int,
-	name varchar(255),
-	dateOfBirth date,
-	gender varchar(255)
-);
-```
+Nous utilisons l'outil de requête de PGadmin 4 v4 pour créer la base de données à partir du schema SQL retrouvé dans le fichier schema.sql.
 
-<h2>Exemple de SQL</h2>
+Il est aussi possible d'obtenir ce schema en effectuant les migrations du dossier "migrations" en ordre croissant de leur ID. Le processus avec PGadmin est le suivant:
 
+1. Ouvrir Query Tool.\
+2. Écrire la commande de la migration dans l'onglet "Query Editor".\
+3. Exécuter la commande\
+4. Recommencer pour les autres migrations.
+ 
+
+
+<h2>Seed SQL</h2>
+
+Le fichier seed.sql contient une série de valeurs à insérer dans la base de donnée.\
+Elle peut être exécutée de la même manière que les migrations.
+
+<h2>Exemple de requêtes SQL</h2>
 
 <h3>INSERT</h3>
 
