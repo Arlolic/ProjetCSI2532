@@ -6,7 +6,13 @@ function sql($sql, $dbconn = null)
   return pg_fetch_all($result);
 }
 $athletes = sql("SELECT * FROM athletes");
+$competitions = sql("SELECT * FROM competitions");
+
 echo "<pre>";
 print_r($athletes);
+echo "</pre>";
+
+echo "<pre>";
+print_r($competitions);
 echo "</pre>";
 
