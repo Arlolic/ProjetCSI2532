@@ -29,6 +29,16 @@ Il est aussi possible d'obtenir ce schema en effectuant les migrations du dossie
 Le fichier seed.sql contient une série de valeurs à insérer dans la base de donnée.\
 Elle peut être exécutée de la même manière que les migrations.
 
+<h2>Application php en lecture seule</h2>
+
+Un server peut être créé en exécutant cette commande dans le dossier "phpapp":
+```
+php -S localhost:4000
+```
+On peut s'y connecter à l'adresse http://localhost:4000/site.php .
+La commande SQL dans le fichier site.php peut être modifiée. (ligne 8)
+Le mot de passe doit être celui de la base de données. 
+
 <h2>Exemple de requêtes SQL</h2>
 
 <h3>INSERT</h3>
