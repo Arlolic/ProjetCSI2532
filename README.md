@@ -1,13 +1,13 @@
-# CSI 2532 - Livrable 2
+# CSI 2532 - Livrable 3
 
 Une base de donnée pour les compétition et des classements d'athlètes.
 <h2>Diagramme Entité-Relation</h2>
 
-![ER_livrable2](diagrams/ER_livrable2.PNG)
+![ER_livrable3](diagrams/SchemaERLivr3.PNG)
 
 <h2>Diagramme relationnel</h2>
 
-![RM_livrable2](diagrams/RM_livrable2.PNG)
+![RM_livrable3](diagrams/SchemaLivr3.PNG)
 
 
 
@@ -44,13 +44,13 @@ Le mot de passe doit être celui de la base de données.
 <h3>INSERT</h3>
 
 ```
-INSERT INTO athletes(ID, name, dateOfBirth, gender)
+INSERT INTO athletes(ID, email, name, gender, date_of_birth)
 VALUES 
-	(1, 'Jojo Lethug', '2000-10-02', 'male'),
-	(2, 'Dio Levillain', '2000-01-02', 'male'),
-	(3, 'Micheline Michelin', '1976-12-12', 'female'),
-	(4, 'Jean-Michel Crapaud', '1992-04-02', 'crapaud'),
-	(5, 'Jackie Chan', '1980-10-03', 'man');
+	(1, 'jlet207@gmail.com', 'Jojo Lethug',  'male', '2000-10-02'),
+	(2, 'Dio.Levi@hotmail.com', 'Dio Levillain', 'male', '2000-01-02'),
+	(3, 'Michmich@politico.ca', 'Micheline Michelin', 'female', '1976-12-12'),
+	(4, 'LeCrapaud@canada.ca', 'Jean-Michel Crapaud', 'crapaud', '1992-04-02'),
+	(5, 'Jackie123@gmail.com' 'Jackie Chan', 'man', '1980-10-03');
 ```
 
 <h3>DELETE</h3>
