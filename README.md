@@ -3,11 +3,11 @@
 Une base de donnée pour les compétition et des classements d'athlètes.
 <h2>Diagramme Entité-Relation</h2>
 
-![ER_livrable3](diagrams/SchemaERLivr3.PNG)
+![ER_livrable3](diagrams/ER_livrable3.PNG)
 
 <h2>Diagramme relationnel</h2>
 
-![RM_livrable3](diagrams/SchemaLivr3.PNG)
+![RM_livrable3](diagrams/RM_livrable3.PNG)
 
 
 
