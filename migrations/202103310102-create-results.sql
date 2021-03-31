@@ -2,7 +2,6 @@ BEGIN;
 CREATE TABLE results (
     athlete_id int,
 	event_id int,
-	event_name varchar(255),
 	main_score int NOT NULL,
 	time_capped_score int,
 	tie_breaker_score int,
