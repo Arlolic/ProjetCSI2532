@@ -74,3 +74,41 @@ CREATE TABLE results (
     FOREIGN KEY (event_id) REFERENCES events(ID),
     FOREIGN KEY (athlete_id) REFERENCES athletes(ID)
 );
+
+CREATE VIEW leaderboards AS
+(
+	(SELECT athletes.name, comp_name, event_name, main_score_type, main_score,
+	time_capped_type, time_capped_score, tie_breaker_type, tie_breaker_score, events.ID AS e_id
+	FROM
+	((athletes INNER JOIN results ON results.athlete_id = athletes.ID) 
+		INNER JOIN events ON events.ID = results.event_id)
+		INNER JOIN competitions ON competitions.ID = events.comp_id)
+);
+
+CREATE VIEW ordered_boards AS (
+	select name, comp_name, event_name, main_score, time_capped_score, tie_breaker_score
+	from leaderboards 
+	order by case
+		when main_score_type in ('COUNT ASC', 'TIME ASC', 'WEIGHT ASC')
+		then main_score end asc, 
+
+		case
+		when main_score_type in ('COUNT DESC', 'TIME DESC', 'WEIGHT DESC')
+		then main_score end desc,
+
+		case
+		when time_capped_type in ('COUNT ASC', 'TIME ASC', 'WEIGHT ASC')
+		then time_capped_score end asc, 
+
+		case
+		when time_capped_type in ('COUNT DESC', 'TIME DESC', 'WEIGHT DESC')
+		then time_capped_score end desc, 
+
+		case
+		when tie_breaker_type in ('COUNT ASC', 'TIME ASC', 'WEIGHT ASC')
+		then tie_breaker_score end asc, 
+
+		case
+		when tie_breaker_type  in ('COUNT DESC', 'TIME DESC', 'WEIGHT DESC')
+		then tie_breaker_score end desc
+);
