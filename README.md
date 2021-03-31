@@ -35,7 +35,7 @@ Un server peut être créé en exécutant cette commande dans le dossier "phpapp
 ```
 php -S localhost:4000
 ```
-On peut s'y connecter à l'adresse http://localhost:4000/site.php .
+On peut s'y connecter à l'adresse http://localhost/index.php .
 La commande SQL dans le fichier site.php peut être modifiée. (ligne 8)
 Le mot de passe doit être celui de la base de données. 
 
@@ -43,29 +43,20 @@ Le mot de passe doit être celui de la base de données.
 
 <h3>INSERT</h3>
 
-```
-INSERT INTO athletes(ID, email, name, gender, date_of_birth)
-VALUES 
-	(1, 'jlet207@gmail.com', 'Jojo Lethug',  'male', '2000-10-02'),
-	(2, 'Dio.Levi@hotmail.com', 'Dio Levillain', 'male', '2000-01-02'),
-	(3, 'Michmich@politico.ca', 'Micheline Michelin', 'female', '1976-12-12'),
-	(4, 'LeCrapaud@canada.ca', 'Jean-Michel Crapaud', 'crapaud', '1992-04-02'),
-	(5, 'Jackie123@gmail.com' 'Jackie Chan', 'man', '1980-10-03');
-```
+Multiple exemples peuvent être trouvés dans le fichier 'seed.sql'.
 
 <h3>DELETE</h3>
 
 ```
-DELETE from athletes 
-where ID = 3;
+DELETE FROM partners WHERE ID = 31231;
 ```
 
 <h3>UPDATE</h3>
 
 ```
 UPDATE athletes
-  SET gender = 'male'
-  WHERE name = 'Jean-Michel Crapaud';
+  SET name = 'Levillain Dio'
+  WHERE id = 223;
 ```
 
 <h3>SELECT</h3>
@@ -73,6 +64,6 @@ UPDATE athletes
 ```
 SELECT name, gender
 FROM athletes
-WHERE gender <> 'male'
+WHERE gender <> 'm'
 ORDER BY gender DESC, name ASC;
 ```

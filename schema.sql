@@ -78,7 +78,7 @@ CREATE TABLE results (
 CREATE VIEW leaderboards AS
 (
 	(SELECT athletes.name, comp_name, event_name, main_score_type, main_score,
-	time_capped_type, time_capped_score, tie_breaker_type, tie_breaker_score, events.ID AS e_id
+	time_capped_type, time_capped_score, tie_breaker_type, tie_breaker_score, events.ID AS e_id, events.gender
 	FROM
 	((athletes INNER JOIN results ON results.athlete_id = athletes.ID) 
 		INNER JOIN events ON events.ID = results.event_id)
@@ -86,7 +86,7 @@ CREATE VIEW leaderboards AS
 );
 
 CREATE VIEW ordered_boards AS (
-	select name, comp_name, event_name, main_score, time_capped_score, tie_breaker_score
+	select name, comp_name, event_name, gender, main_score, time_capped_score, tie_breaker_score
 	from leaderboards 
 	order by case
 		when main_score_type in ('COUNT ASC', 'TIME ASC', 'WEIGHT ASC')
