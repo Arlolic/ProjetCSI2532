@@ -113,9 +113,18 @@ function displayrankings ($rankings, $numberevents){
 	}
 	echo '<h3>rankings:</h3>';
 	echo '<table> <tr> <th> athlete </th> <th> place </th> </tr>';
+	$n = 0;
+	while(!empty($averages)){
+	$max = 0; 
 	foreach ($averages as $athlete => $average){
-		echo '<tr> <td>'. $athlete .'</td> <td>'. round($average) .'</td></tr>';
+		if($average>$max){
+			$aa = $athlete;
+			$max = $average;
+		}
 	}
+	unset($averages[$aa]);
+	$n+=1;
+	echo '<tr> <td>'. $aa .'</td> <td>'. $n .'</td></tr>';}
 	echo '</table>';
 }
 
