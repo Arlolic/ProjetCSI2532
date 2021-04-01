@@ -1,4 +1,3 @@
-BEGIN;
 CREATE TABLE register (
     comp_id int,
     athlete_id int, 
@@ -6,4 +5,3 @@ CREATE TABLE register (
     FOREIGN KEY (comp_id) REFERENCES competitions(ID),
     FOREIGN KEY (athlete_id) REFERENCES athletes(ID)
 );
-COMMIT;
