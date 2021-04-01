@@ -1,0 +1,11 @@
+table, th, td {
+  border: 2px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+
+table tr th {
+	background-color: #40c3e0;
+	
+}
+
