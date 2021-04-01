@@ -27,9 +27,9 @@ Il est aussi possible d'obtenir ce schema en effectuant les migrations du dossie
 Le fichier seed.sql contient une série de valeurs à insérer dans la base de donnée.\
 Elle peut être exécutée de la même manière que les migrations.
 
-<h2>Application php en lecture seule</h2>
+<h2>Application php</h2>
 
-Assurez-vous de demarer les fichier .sql dans postgreSQL database. copiez les fichier .php (retrouver dans phpapp folder) dans votre webserver fichier document root (document root folder). modifiez la connection string postgreSQL dans le fichier 'sql.PHP' pour pointer a votre base de donnees. le menu est accedable a 'http.localhot/index.php'.
+Assurez-vous de demarer les fichier .sql dans postgreSQL database. copiez les fichier .php (retrouver dans phpapp folder) dans votre webserver fichier document root (document root folder). Modifiez la connection string postgreSQL dans le fichier 'sql.PHP' pour pointer a votre base de donnees. Le menu est accedable a 'http.localhot/index.php'.
 
 *English Translated:*
 *Make sure to run the .sql files onto you postreSQL database. Copy the .php files *onto your webserver document root folder. Modify the postreSQL connection string *in the file 'sql.PHP' to point to your database. access http.localhost/index.php as the menu of the website*
