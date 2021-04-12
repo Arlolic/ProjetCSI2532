@@ -20,7 +20,7 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'partners_api.php';
+require 'api/partners_api.php';
 
 $partners = json_decode(get_Competition());
 

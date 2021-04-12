@@ -20,7 +20,7 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'event_api.php';
+require 'api/event_api.php';
 
 $event_results = json_decode(get_event($_GET['id']));
 

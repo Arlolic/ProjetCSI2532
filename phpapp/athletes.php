@@ -21,7 +21,7 @@ Sponsored by MeFit
 
 <?php
 
-require 'athletes_api.php';
+require 'api/athletes_api.php';
 
 $res = get_Athletes();
 

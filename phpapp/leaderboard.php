@@ -20,7 +20,7 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'leaderboard_api.php';
+require 'api/leaderboard_api.php';
 
 $boards = get_leaderboard();
 

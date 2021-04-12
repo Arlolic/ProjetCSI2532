@@ -14,7 +14,7 @@
 Sponsored by MeFit
 
 <?php
-require 'competitions_api.php';
+require 'api/competitions_api.php';
 
 $competitions = json_decode(get_Competitions());
 ?>

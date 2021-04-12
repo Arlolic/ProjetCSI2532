@@ -20,7 +20,7 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'contact_api.php';
+require 'api/contact_api.php';
 
 $athletes = JSON_decode(get_contact($_GET['id']));
 
