@@ -1,3 +1,4 @@
+BEGIN;
 CREATE TABLE competitions (
     ID int,
     comp_name varchar(255),
@@ -6,3 +7,4 @@ CREATE TABLE competitions (
     end_date_time timestamp, 
     PRIMARY KEY (ID)
 );
+COMMIT;
