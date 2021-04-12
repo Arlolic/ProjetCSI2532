@@ -13,7 +13,7 @@
 
 Sponsored by MeFit
 
-<table class="dashboard_table">
+<table class="my_table">
 	<tr>
 	<th><a href='athletes.php'>Athletes</a></th>
 	<th><a href='competitions.php'>Competitions</a></th>

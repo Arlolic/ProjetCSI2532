@@ -20,11 +20,11 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'sql.php';
+require 'leaderboard_api.php';
 
-$boards = sql("SELECT * FROM ordered_boards");
+$boards = get_leaderboard();
 
-echo '<table class="lead_table_curr">
+echo '<table class="my_table">
         <tr>
 		 <th>Position</th>
          <th>Athlete</th>

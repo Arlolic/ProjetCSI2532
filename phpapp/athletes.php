@@ -20,23 +20,26 @@ Sponsored by MeFit
 </table>
 
 <?php
-require 'sql.php';
 
-$athletes = sql("SELECT * FROM athletes");
+require 'athletes_api.php';
 
-echo '<table class="athlete_table">
+$res = get_Athletes();
+
+$athletes = json_decode($res);
+
+echo '<table class="my_table">
         <tr>
          <th>ID</th>
          <th>name</th>
          <th>Date of Birth</th>
         </tr>';
 
-foreach($athletes as $array)
+foreach($athletes as $item)
 {
     echo '<tr>
-            <td class="highlight">'. $array['id'].'</td>
-            <td>'. $array['name'].'</td>
-            <td>'. $array['date_of_birth'].'</td>
+            <td class="highlight">'. $item->id.'</td>
+            <td>'. $item->name.'</td>
+            <td>'. $item->date_of_birth.'</td>
           </tr>';
 }
 echo '</table>';

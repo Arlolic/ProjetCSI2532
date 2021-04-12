@@ -13,16 +13,16 @@
 
 Sponsored by MeFit
 
-<table class="dashboard_table">
+<table class="my_table">
 	<tr>
 	<th><a href='index.php'>return</a></th>
     </tr>
 </table>
 
 <?php
-require 'sql.php';
+require 'event_api.php';
 
-$event_results = sql("SELECT * FROM results INNER JOIN athletes ON results.athlete_id = athletes.ID WHERE event_id=". $_GET['id'] ." ORDER BY main_score ASC, time_capped_score DESC, tie_breaker_score ASC");
+$event_results = json_decode(get_event($_GET['id']));
 
 if (empty($event_results)){
 echo 'no results for this event';
@@ -30,7 +30,7 @@ echo 'no results for this event';
 
 else{
 
-echo '<table class="comp_table">
+echo '<table class="my_table">
         <tr>
          <th>Athlete</th>
          <th>Main Score</th>
@@ -38,13 +38,13 @@ echo '<table class="comp_table">
          <th>Tie Breaker Score</th>
         </tr>';
 
-foreach($event_results as $array)
+foreach($event_results as $item)
 {
     echo '<tr>
-            <td>'. $array['name'].'</td>
-            <td>'. $array['main_score'] .'</td>
-            <td>'. $array['time_capped_score'].'</td>
-            <td>'. $array['tie_breaker_score'].'</td>
+            <td>'. $item->name.'</td>
+            <td>'. $item->main_score .'</td>
+            <td>'. $item->time_capped_score.'</td>
+            <td>'. $item->tie_breaker_score.'</td>
           </tr>';
 }
 }
