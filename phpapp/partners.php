@@ -13,18 +13,18 @@
 
 Sponsored by MeFit
 
-<table class="dashboard_table">
+<table class="my_table">
 	<tr>
 	<th><a href='index.php'>return</a></th>
     </tr>
 </table>
 
 <?php
-require 'sql.php';
+require 'api/partners_api.php';
 
-$partners = sql("SELECT * FROM partners INNER JOIN contacts ON contacts.id=partners.contact_id");
+$partners = json_decode(get_Competition());
 
-echo '<table class="partners_table">
+echo '<table class="my_table">
         <tr>
          <th>ID</th>
          <th>Enterprise</th>
@@ -32,13 +32,13 @@ echo '<table class="partners_table">
          <th>Contact</th>
         </tr>';
 
-foreach($partners as $array)
+foreach($partners as $item)
 {
     echo '<tr>
-            <td class="highlight">'. $array['id'].'</td>
-            <td>'. $array['enterprise_name'].'</td>
-            <td>'. $array['address'].'</td>
-            <td><a href="contact.php?id='.$array['contact_id'].'">'. $array['name'].'</td>
+            <td class="highlight">'. $item->id.'</td>
+            <td>'. $item->enterprise_name.'</td>
+            <td>'. $item->address.'</td>
+            <td><a href="contact.php?id='.$item->contact_id.'">'. $item->name.'</td>
           </tr>';
 }
 echo '</table>';

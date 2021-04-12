@@ -13,19 +13,24 @@
 
 Sponsored by MeFit
 
+<?php
+require 'api/competitions_api.php';
+
+$competitions = json_decode(get_Competitions());
+?>
+
 <table class="dashboard_table">
 	<tr>
 	<th><a href='index.php'>return</a></th>
     </tr>
 </table>
 
+
+
+
+
 <?php
-require 'sql.php';
-
-$competitions = sql("SELECT * FROM competitions");
-
-
-echo '<table class="lead_table">
+echo '<table class="my_table">
         <tr>
          <th>Name</th>
          <th>Venue</th>
@@ -34,14 +39,14 @@ echo '<table class="lead_table">
          <th>Year</th>
         </tr>';
 
-foreach($competitions as $array)
+foreach($competitions as $item)
 {
     echo '<tr>
-            <td><a href="competition.php?id='.$array['id'].'"> '.$array['comp_name'].'</a></td>
-            <td>'. $array['venue'].'</td>
-            <td>'. $array['start_date_time'].'</td>
-            <td>'. $array['end_date_time'].'</td>
-            <td>'. $array['comp_year'].'</td>
+            <td><a href="competition.php?id='.$item->id.'"> '.$item->comp_name.'</a></td>
+            <td>'. $item->venue.'</td>
+            <td>'. $item->start_date_time.'</td>
+            <td>'. $item->end_date_time.'</td>
+            <td>'. $item->comp_year.'</td>
           </tr>';
 }
 

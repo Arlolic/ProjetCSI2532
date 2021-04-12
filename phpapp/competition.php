@@ -13,16 +13,16 @@
 
 Sponsored by MeFit
 
-<table class="dashboard_table">
+<table class="my_table">
 	<tr>
 	<th><a href='index.php'>return</a></th>
     </tr>
 </table>
 
 <?php
-require 'sql.php';
+require 'api/competition_api.php';
 
-$competition = sql("SELECT * FROM events WHERE comp_id=".$_GET['id']);
+$competition = JSON_decode(get_Competition($_GET['id']));
 
 if (empty($competition)){
 echo 'no event for this competition';
@@ -30,7 +30,7 @@ echo 'no event for this competition';
 
 else{
 
-echo '<table class="comp_table">
+echo '<table class="my_table">
         <tr>
          <th>ID</th>
          <th>Event</th>
@@ -38,13 +38,13 @@ echo '<table class="comp_table">
          <th>Tie Breaker Type</th>
         </tr>';
 
-foreach($competition as $array)
+foreach($competition as $item)
 {
     echo '<tr>
-            <td>'. $array['id'].'</td>
-            <td> <a href="event.php?id='.$array['id'].'"> '.$array['event_name'] .' ('.$array['gender'].')</a></td>
-            <td>'. $array['main_score_type'].'</td>
-            <td>'. $array['tie_breaker_type'].'</td>
+            <td>'. $item->id.'</td>
+            <td> <a href="event.php?id='.$item->id.'"> '.$item->event_name .' ('.$item->gender.')</a></td>
+            <td>'. $item->main_score_type.'</td>
+            <td>'. $item->tie_breaker_type.'</td>
           </tr>';
 }
 }

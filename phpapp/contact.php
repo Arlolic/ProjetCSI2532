@@ -13,18 +13,18 @@
 
 Sponsored by MeFit
 
-<table class="dashboard_table">
+<table class="my_table">
 	<tr>
 	<th><a href='index.php'>return</a></th>
     </tr>
 </table>
 
 <?php
-require 'sql.php';
+require 'api/contact_api.php';
 
-$athletes = sql("SELECT * FROM contacts WHERE id=".$_GET['id']);
+$athletes = JSON_decode(get_contact($_GET['id']));
 
-echo '<table class="contact_table">
+echo '<table class="my_table">
         <tr>
 		 <th>Gender</th>
          <th>Name</th>
@@ -32,13 +32,13 @@ echo '<table class="contact_table">
          <th>Phone Number</th>
         </tr>';
 
-foreach($athletes as $array)
+foreach($athletes as $item)
 {
     echo '<tr>
-            <td>'. $array['gender'].'</td>
-            <td>'. $array['name'].'</td>
-            <td>'. $array['email'].'</td>
-            <td>'. $array['phone_number'].'</td>
+            <td>'. $item->gender.'</td>
+            <td>'. $item->name.'</td>
+            <td>'. $item->email.'</td>
+            <td>'. $item->phone_number.'</td>
           </tr>';
 }
 echo '</table>';
